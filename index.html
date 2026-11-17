@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090711" />
+  <meta name="description" content="Lahari Nemani — Computer Science and Business Systems student, aspiring software engineer." />
+  <title>Lahari Nemani | Software Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090711; --panel: #12101e; --panel2: #171426; --text: #f5f2ff;
+      --muted: #aaa4bd; --purple: #a78bfa; --pink: #e879f9; --line: rgba(190,168,255,.16);
+      --glow: 0 0 45px rgba(139,92,246,.18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { background: var(--bg); color: var(--text); font-family: "DM Sans", sans-serif; line-height: 1.65; overflow-x: hidden; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:-1; background:
+      radial-gradient(ellipse at 12% 12%, rgba(124,58,237,.18), transparent 35%),
+      radial-gradient(ellipse at 88% 38%, rgba(192,38,211,.10), transparent 30%),
+      radial-gradient(ellipse at 50% 100%, rgba(79,70,229,.12), transparent 35%); }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
+    .nav { position:fixed; top:0; width:100%; z-index:20; background:rgba(9,7,17,.78); backdrop-filter:blur(18px); border-bottom:1px solid var(--line); }
+    .nav-inner { height:76px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { font:700 1.22rem "Space Grotesk"; letter-spacing:-.5px; }
+    .brand span { color:var(--purple); }
+    .nav-links { display:flex; align-items:center; gap:27px; color:var(--muted); font-size:.9rem; }
+    .nav-links a:hover { color:white; }
+    .nav-cta,.btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:1px solid rgba(167,139,250,.45); border-radius:999px; padding:11px 19px; color:white; background:linear-gradient(120deg,rgba(139,92,246,.23),rgba(217,70,239,.12)); box-shadow:var(--glow); transition:.25s; cursor:pointer; font-weight:600; }
+    .nav-cta:hover,.btn:hover { transform:translateY(-3px); border-color:var(--pink); box-shadow:0 0 30px rgba(192,132,252,.28); }
+    .menu-btn { display:none; background:none; color:white; border:0; font-size:1.7rem; cursor:pointer; }
+    section { padding:105px 0; }
+    .hero { min-height:100vh; display:flex; align-items:center; padding-top:125px; }
+    .hero-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:55px; align-items:center; }
+    .eyebrow { display:inline-flex; gap:9px; align-items:center; color:#d6c8ff; border:1px solid var(--line); background:rgba(167,139,250,.08); padding:7px 13px; border-radius:999px; font-size:.83rem; margin-bottom:23px; }
+    .dot { width:8px; height:8px; background:#a78bfa; border-radius:50%; box-shadow:0 0 12px #a78bfa; }
+    h1,h2,h3 { font-family:"Space Grotesk",sans-serif; line-height:1.15; }
+    h1 { font-size:clamp(2.8rem,6.5vw,5.3rem); letter-spacing:-3px; margin-bottom:20px; }
+    .gradient { background:linear-gradient(100deg,#c4b5fd 10%,#e879f9 55%,#a5b4fc 95%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero-copy { max-width:650px; color:var(--muted); font-size:1.08rem; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+    .btn.secondary { background:rgba(255,255,255,.025); border-color:var(--line); box-shadow:none; color:#e8e2f8; }
+    .hero-meta { display:flex; gap:22px; flex-wrap:wrap; margin-top:34px; color:var(--muted); font-size:.88rem; }
+    .hero-meta span { display:flex; gap:8px; align-items:center; }
+    .portrait-shell { width:min(330px,100%); aspect-ratio:1; margin:auto; padding:9px; border-radius:38% 62% 58% 42% / 42% 40% 60% 58%; background:linear-gradient(140deg,#a78bfa,#e879f9,#6366f1); box-shadow:0 0 80px rgba(139,92,246,.28); animation:float 6s ease-in-out infinite; }
+    .portrait { width:100%; height:100%; object-fit:cover; display:block; border-radius:inherit; background:linear-gradient(145deg,#211a37,#100d1b); }
+    .photo-note { color:var(--muted); text-align:center; font-size:.78rem; margin-top:18px; }
+    @keyframes float { 50% { transform:translateY(-12px) rotate(1deg); } }
+    .section-head { margin-bottom:38px; }
+    .kicker { color:var(--pink); text-transform:uppercase; letter-spacing:2px; font-size:.76rem; font-weight:700; margin-bottom:12px; }
+    h2 { font-size:clamp(2rem,4vw,3rem); letter-spacing:-1.3px; }
+    .section-desc { color:var(--muted); max-width:650px; margin-top:13px; }
+    .about-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:25px; }
+    .card { background:linear-gradient(145deg,rgba(25,21,42,.92),rgba(15,13,25,.95)); border:1px solid var(--line); border-radius:22px; padding:27px; box-shadow:var(--glow); }
+    .card p { color:var(--muted); }
+    .quick-facts { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+    .fact { padding:18px; background:rgba(255,255,255,.025); border:1px solid var(--line); border-radius:16px; }
+    .fact strong { display:block; font:600 1.35rem "Space Grotesk"; color:#d8c8ff; }
+    .fact span { color:var(--muted); font-size:.82rem; }
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+    .skill-card h3 { font-size:1.08rem; margin-bottom:16px; }
+    .chips { display:flex; flex-wrap:wrap; gap:9px; }
+    .chip { border:1px solid rgba(167,139,250,.22); background:rgba(167,139,250,.08); color:#ddd3ff; padding:7px 11px; border-radius:9px; font-size:.84rem; }
+    .project-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .project-card { position:relative; overflow:hidden; }
+    .project-card::after { content:""; position:absolute; width:170px; height:170px; right:-90px; top:-90px; background:rgba(168,85,247,.16); filter:blur(35px); border-radius:50%; }
+    .project-number { color:var(--pink); font:600 .82rem "Space Grotesk"; margin-bottom:18px; }
+    .project-card h3 { font-size:1.35rem; margin-bottom:12px; }
+    .project-card p { font-size:.94rem; margin-bottom:19px; }
+    .project-tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .project-tags span { color:#c7b9ee; background:rgba(255,255,255,.045); border-radius:7px; padding:5px 9px; font-size:.76rem; }
+    .timeline { border-left:1px solid rgba(167,139,250,.35); margin-left:8px; padding-left:25px; display:grid; gap:20px; }
+    .timeline-item { position:relative; }
+    .timeline-item::before { content:""; position:absolute; width:11px; height:11px; border-radius:50%; background:var(--purple); left:-31px; top:7px; box-shadow:0 0 15px var(--purple); }
+    .timeline-item h3 { font-size:1.08rem; }
+    .timeline-item .meta { color:var(--pink); font-size:.85rem; margin:5px 0; }
+    .timeline-item p { color:var(--muted); font-size:.92rem; }
+    .cert-list { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+    .cert { padding:20px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.025); }
+    .cert strong { display:block; margin-bottom:6px; }
+    .cert span { color:var(--muted); font-size:.85rem; }
+    .contact-card { text-align:center; padding:55px 25px; }
+    .contact-card p { color:var(--muted); max-width:560px; margin:15px auto 25px; }
+    .contact-links { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
+    footer { border-top:1px solid var(--line); padding:25px 0; color:var(--muted); font-size:.85rem; text-align:center; }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media(max-width:800px) {
+      .nav-links { display:none; position:absolute; top:76px; left:0; width:100%; padding:22px; background:#100d1b; border-bottom:1px solid var(--line); flex-direction:column; gap:18px; }
+      .nav-links.open { display:flex; }
+      .menu-btn { display:block; }
+      .nav-cta { display:none; }
+      .hero-grid,.about-grid { grid-template-columns:1fr; }
+      .hero { text-align:center; padding-top:135px; }
+      .hero-copy { margin:auto; }
+      .hero-actions,.hero-meta { justify-content:center; }
+      .portrait-shell { width:245px; grid-row:1; }
+      .skills-grid,.cert-list { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:560px) {
+      .wrap { width:min(100% - 30px,1120px); }
+      section { padding:78px 0; }
+      .hero { min-height:auto; padding-bottom:75px; }
+      h1 { letter-spacing:-1.8px; }
+      .skills-grid,.project-grid,.cert-list { grid-template-columns:1fr; }
+      .card { padding:22px; }
+      .quick-facts { grid-template-columns:1fr 1fr; }
+    }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; scroll-behavior:auto!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">lahari<span>.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+        <a href="#education">Education</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Let's connect ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot"></span> Computer Science & Business Systems Student</div>
+          <h1>Hi, I'm <span class="gradient">Lahari</span> Nemani.</h1>
+          <p class="hero-copy">An aspiring software engineer interested in building useful applications and exploring the possibilities of technology. I enjoy learning, solving problems, and turning ideas into practical projects.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">Explore my work <span>↘</span></a>
+            <a class="btn secondary" href="#contact">Get in touch</a>
+          </div>
+          <div class="hero-meta">
+            <span>⌖ Davanagere, Karnataka</span>
+            <span>✦ Open to learning opportunities</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="portrait-shell">
+            <!-- Add your own photo in this folder and name it profile.jpg -->
+            <img class="portrait" src="profile.jpg" alt="Portrait of Lahari Nemani"
+              onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(145deg,#2a1d49,#111020)'; this.parentElement.insertAdjacentHTML('beforeend','<div style=&quot;display:grid;place-items:center;width:100%;height:100%;font:700 5rem Space Grotesk;color:#d8c8ff&quot;>LN</div>');">
+          </div>
+          <p class="photo-note">Your photo goes here — replace <strong>profile.jpg</strong> with your picture.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">A little about me</div><h2>Curious mind. <span class="gradient">Builder's mindset.</span></h2></div>
+        <div class="about-grid">
+          <article class="card reveal">
+            <p>I am pursuing a Bachelor of Engineering in Computer Science and Business Systems at Bapuji Institute of Engineering and Technology (BIET), Davanagere. I have a strong interest in Java development, web technologies, and AI/ML. Through academic and personal projects, I am building my programming skills and learning how to develop solutions to real-world problems.</p>
+            <br><p>I value continuous learning, teamwork, and writing clear, practical solutions. I am looking forward to opportunities where I can contribute, learn from experienced developers, and grow as a software engineer.</p>
+          </article>
+          <div class="quick-facts reveal">
+            <div class="fact"><strong>8.45</strong><span>CGPA (latest shared)</span></div>
+            <div class="fact"><strong>2023–27</strong><span>BE, CSBS</span></div>
+            <div class="fact"><strong>Java</strong><span>Primary development focus</span></div>
+            <div class="fact"><strong>3+</strong><span>Project / learning areas</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">What I work with</div><h2>Skills & <span class="gradient">technologies</span></h2><p class="section-desc">Technologies I have studied or used in coursework and projects. I am continuing to strengthen these skills through practice.</p></div>
+        <div class="skills-grid">
+          <article class="card skill-card reveal"><h3>Programming</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python (Beginner)</span><span class="chip">SQL</span></div></article>
+          <article class="card skill-card reveal"><h3>Web development</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">MERN Stack</span></div></article>
+          <article class="card skill-card reveal"><h3>Core concepts</h3><div class="chips"><span class="chip">OOP</span><span class="chip">DBMS</span><span class="chip">Problem Solving</span><span class="chip">Data Structures</span></div></article>
+          <article class="card skill-card reveal"><h3>AI & machine learning</h3><div class="chips"><span class="chip">CNN</span><span class="chip">EfficientNetB4</span><span class="chip">TensorFlow</span><span class="chip">OpenCV</span></div></article>
+          <article class="card skill-card reveal"><h3>Tools & platforms</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Maven</span><span class="chip">Jenkins</span></div></article>
+          <article class="card skill-card reveal"><h3>Professional skills</h3><div class="chips"><span class="chip">Communication</span><span class="chip">Teamwork</span><span class="chip">Adaptability</span><span class="chip">Continuous Learning</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">Selected work</div><h2>Projects that turn <span class="gradient">ideas into action</span></h2><p class="section-desc">A selection of academic projects that helped me explore software development and applied machine learning.</p></div>
+        <div class="project-grid">
+          <article class="card project-card reveal">
+            <div class="project-number">01 / MAIN PROJECT</div>
+            <h3>AI-Based Smart Waste Segregation System</h3>
+            <p>An intelligent waste segregation project that combines image-based classification and sensor-assisted identification to support more efficient waste sorting and responsible waste management.</p>
+            <div class="project-tags"><span>AI / ML</span><span>Computer Vision</span><span>Arduino</span><span>ESP32-CAM / Sensors*</span></div>
+            <p style="font-size:.78rem;margin-top:14px;">*Edit the technology tags to match the final hardware and software in your submitted project report.</p>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-number">02 / MACHINE LEARNING</div>
+            <h3>Plant Disease Detection</h3>
+            <p>An image-based plant disease recognition project that uses a convolutional neural network and EfficientNetB4 transfer learning to classify plant leaf images.</p>
+            <div class="project-tags"><span>Python</span><span>CNN</span><span>EfficientNetB4</span><span>TensorFlow</span></div>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-number">03 / DEVOPS PRACTICE</div>
+            <h3>Maven CI Pipeline</h3>
+            <p>A learning project exploring a Maven-based Java build and continuous integration workflow with Jenkins.</p>
+            <div class="project-tags"><span>Java</span><span>Maven</span><span>Jenkins</span><span>CI</span></div>
+            <a href="https://github.com/lahari0306/-maven-ci-pipeline" target="_blank" rel="noopener" style="display:inline-block;color:#c4b5fd;margin-top:16px;font-size:.88rem;">View GitHub repository ↗</a>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-number">04 / PRACTICE</div>
+            <h3>Programming & development practice</h3>
+            <p>Small exercises and experiments to strengthen Java fundamentals, object-oriented programming, problem solving, and web development.</p>
+            <div class="project-tags"><span>Java</span><span>OOP</span><span>HTML</span><span>CSS</span></div>
+            <a href="https://github.com/lahari0306" target="_blank" rel="noopener" style="display:inline-block;color:#c4b5fd;margin-top:16px;font-size:.88rem;">Explore GitHub ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">My journey</div><h2>Education & <span class="gradient">certifications</span></h2></div>
+        <div class="about-grid">
+          <div class="card reveal">
+            <h3 style="margin-bottom:22px;">Education</h3>
+            <div class="timeline">
+              <div class="timeline-item"><h3>B.E. – Computer Science and Business Systems</h3><div class="meta">2023 – 2027 · Pursuing</div><p>Bapuji Institute of Engineering and Technology (BIET), Davanagere, Karnataka.</p><p>CGPA: 8.45 (latest shared)</p></div>
+              <div class="timeline-item"><h3>Pre-University – Science</h3><div class="meta">Mandaara Residential Public School / PU Science College</div><p>Pre-university science education.</p></div>
+              <div class="timeline-item"><h3>Secondary School</h3><div class="meta">Mandaara Residential Public School</div><p>School education.</p></div>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3 style="margin-bottom:22px;">Certifications</h3>
+            <div class="timeline">
+              <div class="timeline-item"><h3>Deloitte – Data Analytics</h3><p>Certificate in data analytics.</p></div>
+              <div class="timeline-item"><h3>IBM Certificates</h3><p>IBM learning and certification courses.</p></div>
+              <div class="timeline-item"><h3>MERN Stack</h3><p>MERN Stack development certificate.</p></div>
+            </div>
+            <p style="font-size:.78rem;margin-top:20px;">Add certificate names and credential links when available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="card contact-card reveal">
+          <div class="kicker">Have an opportunity?</div>
+          <h2>Let's build something <span class="gradient">meaningful.</span></h2>
+          <p>I'm interested in software development opportunities, internships, and connecting with people who enjoy building useful technology.</p>
+          <div class="contact-links">
+            <a class="btn" href="https://github.com/lahari0306" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn secondary" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a>
+            <a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+          <p style="font-size:.78rem;margin-top:22px;">Before publishing, replace the sample email and LinkedIn link with your own details.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">Designed & built by Lahari Nemani · <span id="year"></span></div></footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
